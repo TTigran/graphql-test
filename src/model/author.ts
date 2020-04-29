@@ -1,14 +1,14 @@
 import { Schema, Document, model }  from 'mongoose';
 
 export interface IAuthor extends Document {
-    id: number;
+    id: string;
     name: string;
 
 }
 
 const Author: Schema = new Schema({
     id: {
-        type: Number,
+        type: String,
         required: true,
         unique: true
     },

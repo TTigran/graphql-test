@@ -14,7 +14,8 @@
       ]
     }
   },
+  "files": ["src/@types/graphql.d.ts"],
   "include": [
-    "src/**/*",
+    "src/**/*"
   ]
 }

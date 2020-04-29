@@ -4,18 +4,6 @@
   "private": true,
   "type": "node",
   "request": "launch",
-  "test": "jest",
-  "jest": {
-    "transform": {
-      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
-    },
-    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ]
-  },
   "runtimeArgs": [
     "-r",
     "ts-node/register"
@@ -27,6 +15,8 @@
     "start": "nodemon src/index.ts"
   },
   "dependencies": {
+    "@graphql-modules/core": "^0.7.15",
+    "@types/uuid": "^7.0.3",
     "apollo-server-express": "^2.12.0",
     "axios": "^0.19.2",
     "cookie-parser": "~1.4.4",
@@ -36,11 +26,13 @@
     "express-graphql": "^0.9.0",
     "formidable": "^1.2.2",
     "graphql": "^15.0.0",
+    "graphql-import-node": "^0.0.4",
     "http-errors": "~1.6.3",
     "mongodb": "^3.5.5",
     "mongoose": "^5.9.7",
     "morgan": "~1.9.1",
     "pug": "2.0.0-beta11",
+    "uuid": "^7.0.3",
     "zeronode": "^1.1.35"
   },
   "devDependencies": {
