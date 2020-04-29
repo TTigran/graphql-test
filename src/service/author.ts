@@ -19,7 +19,7 @@ const createAuthor = async (body: Author): Promise<Author> => {
  }
 };
 
-const getAuthorById = async (id: string): Promise<any> => {
+const getAuthorById = async (id: number) => {
  try {
      const model = await getModel();
      return await model.Author.find({ id });
