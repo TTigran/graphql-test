@@ -1,6 +1,11 @@
-import { createAuthor } from '../../../service';
+import { createAuthor, getAuthorById } from '../../../service';
 
 export const addAuthor = async (id: number, name: string) => {
-    return  await createAuthor({id, name});
+    console.log(name);
+    return  await createAuthor(name);
 };
 
+export const getAuthor = async (id: number, name: string) => {
+    console.log(name);
+    return await getAuthorById(2);
+};

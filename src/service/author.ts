@@ -10,7 +10,7 @@ const getAuthorData = async (): Promise<Author[]>  => {
  }
 };
 
-const createAuthor = async (body: Author): Promise<Author> => {
+const createAuthor = async (body: string): Promise<Author> => {
  try {
    const model = await getModel();
    return await model.Author.create(body);

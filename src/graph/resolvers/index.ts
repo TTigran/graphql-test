@@ -1,6 +1,6 @@
 import { createAuthor, getAuthorById, getAuthorData } from '../../service';
 import { getAuthors, getAuthor,  hello } from './query';
-import { addAuthor } from './mutation';
+import { addAuthor  } from './mutation';
 
 export const resolvers = {
   Query: {
@@ -9,6 +9,7 @@ export const resolvers = {
     getAuthor
   },
   Mutation: {
+
     addAuthor
   }
 };
