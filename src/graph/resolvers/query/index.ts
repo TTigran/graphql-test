@@ -10,8 +10,8 @@ export const getAuthors = async (): Promise<Author[]> => {
     }
 };
 
-export const getAuthor = async (id: any, name: string): Promise<Author> => {
-    console.log(id,name);
+export const getAuthor = async (root: any, {id}: { id: number}): Promise<Author> => {
+    console.log(id);
     try {
         const model = await getModel();
         return  model.Author.findOne({ id });
