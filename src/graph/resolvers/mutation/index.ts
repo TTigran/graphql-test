@@ -1,11 +1,17 @@
-import { createAuthor, getAuthorById } from '../../../service';
+import { Author } from '../../../@types/model/author';
+import { getModel } from '../../../db';
 
-export const addAuthor = async (id: number, name: string) => {
-    console.log(name);
-    return  await createAuthor(name);
+
+export const addAuthor = async (root: any, {id, name}: {name: string, id: number}) => {
+    console.log(name, id, 'ffff');
+
+    const createdData: Author = { id, name};
+    try {
+        const model = await getModel();
+        return model.Author.create(createdData);
+    }catch (e) {
+        console.error(e.message);
+    }
 };
 
-export const getAuthor = async (id: number, name: string) => {
-    console.log(name);
-    return await getAuthorById(2);
-};
+

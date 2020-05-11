@@ -1,15 +1,25 @@
-import { Author } from '../../../../@types/model/Author';
-import { getAuthorData, getAuthorById } from '../../../service';
+import { Author } from '../../../@types/model/author';
+import { getModel } from '../../../db';
 
 export const getAuthors = async (): Promise<Author[]> => {
-    return await getAuthorData();
+    try {
+        const model = await getModel();
+        return  model.Author.find();
+    }catch (e) {
+        console.error(e.message);
+    }
 };
-export const getAuthor = async (id: number, name: string) => {
-    const ID = (JSON.parse(JSON.stringify(name)).id);
-     // const ID = (name.id); why  error ?
-    console.log(await getAuthorById(ID));
-    return await getAuthorById(ID);
+
+export const getAuthor = async (root: any, {id}: { id: number}): Promise<Author> => {
+    console.log(id);
+    try {
+        const model = await getModel();
+        return  model.Author.findOne({ id });
+    }catch (e) {
+        console.log(e.massage);
+    }
 };
+
 export const hello =  async () => {
-    return 'Hello world!';
+    return 'Hello GraphQL!';
 };
