@@ -2,6 +2,7 @@
     getAuthors: [Author]
     getAuthor(id: String!): Author
     hello: String
+    author(id: String!): Author
   }
 
   type Mutation {

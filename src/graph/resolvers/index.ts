@@ -5,7 +5,10 @@ export const resolvers = {
   Query: {
     hello,
     getAuthors,
-    getAuthor
+    getAuthor,
+    author: async (_source: any, { id }: any, { dataSources }: any) => {
+      return dataSources.authorAPI.getOneAuthor(id);
+    },
   },
   Mutation: {
     addAuthor
